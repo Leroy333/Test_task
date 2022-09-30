@@ -20,23 +20,23 @@
 
 2) Исправьте ошибку в фрагменте коде так, чтобы после компиляции в шаблоне не было лишних тегов:
 
-<template>
-	<component-name
-		v-for="i of count" 
-		:key="i"
-		v-if="i < 10" 
-	/>
-</template>
+	<template>
+		<component-name
+			v-for="i of count" 
+			:key="i"
+			v-if="i < 10" 
+		/>
+	</template>
 
-<script>
-	export default {
-		data() {
-			return {
-				count: 20;
-			};
-		},
-	};
-</script>  
+	<script>
+		export default {
+			data() {
+				return {
+					count: 20;
+				};
+			},
+		};
+	</script>  
 
 Ответ: Использование дерективы v-if вместе с v-for вызывает ошибку, т.к при их одновременном использовании v-if будет исполняться первым
 Первое решение - это использование метода filterCount, который заменяет собой v-if.
